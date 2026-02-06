@@ -1,21 +1,14 @@
-from types import SimpleNamespace  # Need this for the new config style
 from vision_utils import *
+
+
 # 1. Load the image
-raw_frame = cv2.imread("../assets/face.png")
+raw_frame = cv2.imread("../assets/face2.png")
 rf_h, rf_w = raw_frame.shape[:2]
 frame = cv2.resize(raw_frame, (256, 256))
 
-# 2. Define the "Outfit" settings
-# This replaces the long list of arguments you used to pass to overlay()
-outfit = [
-    (glasses, SimpleNamespace(index=168, ratio=1.5, point="middle")),
-    (hat, SimpleNamespace(index=9, ratio=2.2, point="bottom_middle")),
-    (blunt, SimpleNamespace(index=13, ratio=0.9, point="top_right"))
-]
-
 # 3. Setup Landmarker
 options = FaceLandmarkerOptions(
-    base_options=BaseOptions(model_asset_path=model_path),
+    base_options=BaseOptions(model_asset_path=MODEL_PATH),
     running_mode=VisionRunningMode.IMAGE
 )
 
@@ -28,7 +21,7 @@ with FaceLandmarker.create_from_options(options) as landmarker:
         face = result.face_landmarks[0]
 
         # This loop applies all items in the 'outfit' list automatically
-        for asset, config in outfit:
+        for asset, config in get_outfit(load_assets() ,theme_name="thug"):
             frame = overlay(frame, asset, face, config)
     else:
         print("No face detected.")

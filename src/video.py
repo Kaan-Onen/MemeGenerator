@@ -1,20 +1,7 @@
-import cv2
-import mediapipe as mp
-from types import SimpleNamespace
-from vision_utils import (
-    overlay, get_ear, landmarker_options,
-    FaceLandmarker, glasses, hat, blunt
-)
-
-# 1. SETUP: Define your accessories and their settings
-outfit = [
-    (glasses, SimpleNamespace(index=168, ratio=1.5, point="middle")),
-    (hat, SimpleNamespace(index=9, ratio=2.2, point="bottom_middle")),
-    (blunt, SimpleNamespace(index=13, ratio=0.9, point="top_right"))
-]
+from vision_utils import *
 
 options = landmarker_options("Video")
-cap = cv2.VideoCapture("../assets/video2.mp4")
+cap = cv2.VideoCapture("../assets/video1.mp4")
 fps = cap.get(cv2.CAP_PROP_FPS)
 delay = int(1000 / fps) if fps > 0 else 33
 
@@ -41,14 +28,14 @@ with FaceLandmarker.create_from_options(options) as landmarker:
 
             # Toggle the meme on when eyes close (< 0.21)
             # Toggle it off when eyes open (> 0.21)
-            if avg_ear < 0.21:
+            if avg_ear > 0.21:
                 is_meme_active = True
             else:
                 is_meme_active = False
 
             # Apply the outfit if triggered
             if is_meme_active:
-                for asset, cfg in outfit:
+                for asset, cfg in get_outfit(load_assets(), "pirate"):
                     frame = overlay(frame, asset, face, cfg)
 
         # UI and Display
