@@ -7,7 +7,7 @@ from vision_utils import BaseOptions,FaceLandmarker, FaceLandmarkerOptions,Visio
 model_path: str = "../models/face_landmarker.task"
 raw_frame = cv2.imread("../assets/face5.png")
 hat = cv2.imread("../assets/thug_life_hat.png", cv2.IMREAD_UNCHANGED)
-glasses = cv2.imread("../assets/thug_life_glasses4.png", cv2.IMREAD_UNCHANGED)
+glasses = cv2.imread("../assets/thug_life_glasses.png", cv2.IMREAD_UNCHANGED)
 blunt = cv2.imread("../assets/thug_life_blunt.png", cv2.IMREAD_UNCHANGED)
 
 #take the frame's original size and make the image 256x256 to get better landmark position

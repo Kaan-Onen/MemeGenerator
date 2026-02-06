@@ -5,7 +5,7 @@ model_path = "../models/face_landmarker.task"
 
 #assets import
 hat = cv2.imread("../assets/thug_life_hat.png", cv2.IMREAD_UNCHANGED)
-glasses = cv2.imread("../assets/thug_life_glasses4.png", cv2.IMREAD_UNCHANGED)
+glasses = cv2.imread("../assets/thug_life_glasses.png", cv2.IMREAD_UNCHANGED)
 blunt = cv2.imread("../assets/thug_life_blunt.png", cv2.IMREAD_UNCHANGED)
 
 #landmarks run on video
@@ -15,7 +15,7 @@ options = FaceLandmarkerOptions(
 )
 
 #get video and video's fps
-cap = cv2.VideoCapture("../assets/video3.mp4")
+cap = cv2.VideoCapture("../assets/video.mp4")
 fps = cap.get(cv2.CAP_PROP_FPS)
 delay = int(1000 / fps) if fps > 0 else 33
 
