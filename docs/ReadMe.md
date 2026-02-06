@@ -48,3 +48,5 @@ Run the Scripts:
 For images: python image.py
 
 For video: python video.py
+MemeGeneratorForThugLife
+MemeGeneratorForThugLife
