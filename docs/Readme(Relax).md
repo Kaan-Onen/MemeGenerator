@@ -28,26 +28,26 @@ This project is built with **Python** and a trio of powerhouse libraries:
 
 ## 📂 Project Structure
 
-├── .venv/               # Isolated virtual environment
-├── assets/              # Thug life PNGs (glasses, hat, blunt) and media 🚬
-├── docs/                # Documentation and project guides
-├── models/              # The face_landmarker.task file 🤖
-├── src/                 # Core logic
-│   ├── image.py         # Script for processing static images 📸
-│   ├── video.py         # Script for video & blink detection 📹
-│   └── vision_utils.py  # Utility functions for scaling/rotation
-└── requirements.txt     # The "shopping list" of dependencies
+├── .venv/               # Isolated virtual   
+├── assets/              # Thug life PNGs (glasses, hat, blunt) and media   
+├── docs/                # Documentation and project guides  
+├── models/              # The face_landmarker.task file 🤖  
+├── src/                 # Core logic  
+│   ├── image.py         # Script for processing static images 📸  
+│   ├── video.py         # Script for video & blink detection 📹  
+│   └── vision_utils.py  # Utility functions for scaling/rotation  
+└── requirements.txt     # The "shopping list" of dependencies  
 
 🎬 Getting Started
 1. Install Dependencies
-Get your environment ready with one command: pip install -r requirements.txt 💻 
+Get your environment ready with one command: pip install -r requirements.txt 💻  
 
 2. Models and Assets
 Drop the face_landmarker.task model into the models/ folder.
 
-Throw your swagger (glasses, hats, etc.) and your test videos into the assets/ folder. 📂
+Throw your swagger (glasses, hats, etc.) and your test videos into the assets/ folder. 📂  
 
-3. Run the Scripts
-For Photos: python src/image.py 📸
+3. Run the Scripts  
+For Photos: python src/image.py 📸  
 
 For Videos: python src/video.py 📹

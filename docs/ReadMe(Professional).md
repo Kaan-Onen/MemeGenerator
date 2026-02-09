@@ -24,10 +24,10 @@ To ensure visual fidelity, the software utilizes the alpha channel of PNG assets
 
 ## 💻 Technical Stack
 
-* **Language:** Python 3.9+
-* **Face Tracking:** MediaPipe FaceLandmarker
-* **Image Processing:** OpenCV (Open Source Computer Vision Library)
-* **Mathematical Operations:** NumPy (Matrix transformations and coordinate geometry)
+* **Language:** Python 3.9+  
+* **Face Tracking:** MediaPipe FaceLandmarker  
+* **Image Processing:** OpenCV (Open Source Computer Vision Library)  
+* **Mathematical Operations:** NumPy (Matrix transformations and coordinate geometry)  
 
 ---
 
@@ -45,13 +45,13 @@ To ensure visual fidelity, the software utilizes the alpha channel of PNG assets
 └── requirements.txt      # List of mandatory Python dependencies  
 
 
-🚀 Implementation Guide
-1. Environment Configuration
+🚀 Implementation Guide  
+1. Environment Configuration  
 Install the required dependencies using the Python package manager:
 
 Bash
-pip install -r requirements.txt
-2. Model and Asset Integration
+pip install -r requirements.  
+2. Model and Asset Integration  
 Download the face_landmarker.task file and place it within the models/ directory.
 
 Ensure all graphical assets (e.g., eyewear, headwear) are stored in the assets/ directory with appropriate transparency layers.
@@ -59,9 +59,9 @@ Ensure all graphical assets (e.g., eyewear, headwear) are stored in the assets/ 
 3. Execution
 To process a static image:
 
-Bash
-python src/image_proc.py
+Bash  
+python src/image_proc.py  
 To initialize the video stream with blink detection:
 
-Bash
+Bash  
 python src/video_proc.py
