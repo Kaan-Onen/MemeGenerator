@@ -60,8 +60,8 @@ Ensure all graphical assets (e.g., eyewear, headwear) are stored in the assets/ 
 To process a static image:
 
 Bash  
-python src/image_proc.py  
+python src/image.py  
 To initialize the video stream with blink detection:
 
 Bash  
-python src/video_proc.py
+python src/video.py
