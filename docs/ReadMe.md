@@ -1,4 +1,4 @@
-# Thug Life Meme Generator
+# Meme Generator
 
 A professional-grade computer vision application designed to automate the overlay of memes graphical assets onto human faces. Uses the **MediaPipe FaceLandmarker** framework, the system ensures high-precision placement through real-time landmark tracking and geometric transformations.
 
@@ -61,8 +61,8 @@ Ensure all graphical assets (e.g., eyewear, headwear) are stored in the assets/ 
 To process a static image:
 
 Bash  
-python src/image_proc.py  
+python src/image.py  
 To initialize the video stream with blink detection:
 
 Bash  
-python src/video_proc.py
+python src/video.py
