@@ -2,7 +2,7 @@ from vision_utils import *
 
 
 # Load the image
-raw_frame = cv2.imread("../assets/face2.png")
+raw_frame = cv2.imread("../assets/face1.png")
 rf_h, rf_w = raw_frame.shape[:2]
 frame = cv2.resize(raw_frame, (256, 256))
 
