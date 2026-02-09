@@ -27,8 +27,8 @@ def load_assets():
         thug_hat=load_img("thug_life_hat.png"),
         thug_glasses=load_img("thug_life_glasses.png"),
         thug_blunt=load_img("thug_life_blunt.png"),
-        pirate_hat=load_img("thug_life_hat.png"),
-        eye_patch=load_img("thug_life_blunt.png")
+        pirate_hat=load_img("pirate_hat.png"),
+        eye_patch=load_img("pirate_patch.png")
     )
 
 
@@ -40,7 +40,7 @@ def get_outfit(assets, theme_name="thug"):
             (assets.thug_blunt, SimpleNamespace(index=13, ratio=0.9, point="top_right"))
         ],
         "pirate": [
-            (assets.pirate_hat, SimpleNamespace(index=10, ratio=2.5, point="bottom_middle")),
+            (assets.pirate_hat, SimpleNamespace(index=9, ratio=2.5, point="bottom_middle")),
             (assets.eye_patch, SimpleNamespace(index=359, ratio=0.6, point="middle"))
         ]
     }
