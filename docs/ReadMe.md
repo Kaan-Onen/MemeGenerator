@@ -1,50 +1,68 @@
-Meme Generator
-A computer vision project that automatically overlays "thug life" assets onto faces using mediapipe face landmarker.
-Can be used to make thug life meme to an image or video with blink detection trigger.
+# Thug Life Meme Generator
 
-Features:
-Static Image Overlay: Processes image and scales and rotates assets based on the distance and angle between eyes.
+A professional-grade computer vision application designed to automate the overlay of memes graphical assets onto human faces. Uses the **MediaPipe FaceLandmarker** framework, the system ensures high-precision placement through real-time landmark tracking and geometric transformations.
 
-Video Overlay: Processes video and when user closes their eyes "thug life meme" will apper on the user.
+---
 
-Smart Anchoring: Assets placed based on specific landmarks on the face.
+## 🛠 Core Features
 
-Rotation: Based on distance between eyes and angel between eyes the assets placed on face even if the face is tilted ensuring assets fit perfect.
+### Static Image Processing
+The system analyzes static images to determine facial orientation. Assets are dynamically scaled and rotated based on the distance and the angle of the eyes to ensure a natural fit.
 
-Uses Python
+### Real-Time Video & Blink Detection
+Utilizing a temporal analysis of facial landmarks, the application detects blink events in video streams. A detected blink serves as the trigger mechanism to initiate meme overlay sequence.
 
-Core libraries: Mediapipe for face landmarks, OpenCV for image and video manipulation and NumPy for coordinates and matrix transformations.
+### Precision Anchoring & Rotation
+Assets are anchored to specific facial indices provided by the MediaPipe mesh. The system calculates the precise rotation matrix using the following geometric relationship:
 
-Project Structure:
-.venv: Virtual environments
-assets: Thug life photos, images and videos
-docs: Documents
-models: landmark models
-src: .py files -> scripts for videos and images and their utils
-requirements.txt: List of necessary Python dependencies.
+$$\theta = \arctan2(y_{eye\_right} - y_{eye\_left}, x_{eye\_right} - x_{eye\_left})$$
 
-How it Works:
-The project uses FaceLandmarker to identify face points.
+### Advanced Alpha Blending
+To ensure visual fidelity, the software utilizes the alpha channel of PNG assets. This allows for transparency and professional-grade compositing over the source frames.
 
-The overlay function in vision_utils.py performs the following:
-Scaling: Resizes the asset based on the distance between the user's eyes.
+---
 
-Rotation: Rotates the asset to match the tilt of the eyes using cv2.getRotationMatrix2D.
+## 💻 Technical Stack
 
-Alpha Blending: Uses the PNG alpha channel to ensure seamless transparency for the assets.
+* **Language:** Python 3.9+  
+* **Face Tracking:** MediaPipe FaceLandmarker  
+* **Image Processing:** OpenCV (Open Source Computer Vision Library)  
+* **Mathematical Operations:** NumPy (Matrix transformations and coordinate geometry)  
 
-Getting Started:
+---
 
-1- Install Dependencies:
-pip install -r requirements.txt
+## 📂 Project Structure
 
-2- Models and Assets:
-Ensure the MediaPipe model face_landmarker.task is in the models/ folder.
 
-Place your assets (glasses, hat, blunt), face images and the videos in the assets/ folder.
+├── .venv/                # Virtual environment for dependency isolation  
+├── assets/               # Source assets (transparent PNGs, images, and videos)  
+├── docs/                 # Technical documentation and specifications  
+├── models/               # Pre-trained MediaPipe task models  
+├── src/                  # Source code directory  
+│   ├── image_proc.py     # Static image processing logic  
+│   ├── video_proc.py     # Real-time video and blink detection logic  
+│   └── vision_utils.py   # Coordinate transformation and rendering utilities  
+└── requirements.txt      # List of mandatory Python dependencies  
 
-Run the Scripts:
 
-For images: python image.py
+🚀 Implementation Guide  
+1. Environment Configuration  
+Install the required dependencies using the Python package manager:
 
-For video: python video.py
+Bash  
+pip install -r requirements.  
+
+2. Model and Asset Integration  
+Download the face_landmarker.task file and place it within the models/ directory.
+
+Ensure all graphical assets (e.g., eyewear, headwear) are stored in the assets/ directory with appropriate transparency layers.
+
+3. Execution
+To process a static image:
+
+Bash  
+python src/image_proc.py  
+To initialize the video stream with blink detection:
+
+Bash  
+python src/video_proc.py
