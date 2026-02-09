@@ -4,19 +4,17 @@ import numpy as np
 import mediapipe as mp
 from types import SimpleNamespace
 
-# --- MediaPipe Setup Constants ---
+# MediaPipe Setup Constants
 BaseOptions = mp.tasks.BaseOptions
 FaceLandmarker = mp.tasks.vision.FaceLandmarker
 FaceLandmarkerOptions = mp.tasks.vision.FaceLandmarkerOptions
 VisionRunningMode = mp.tasks.vision.RunningMode
 
-# Simple relative path for Linux
 MODEL_PATH = "../models/face_landmarker.task"
 
 
 def load_assets():
     def load_img(name):
-        # Direct string concatenation for simplicity as requested
         path = "../assets/" + name
         img = cv2.imread(path, cv2.IMREAD_UNCHANGED)
         if img is None:
@@ -57,7 +55,7 @@ def landmarker_options(running_mode):
     )
 
 
-# --- Geometry & Rendering Functions ---
+# Geometry & Rendering Functions
 
 def get_anchor_offset(width, height, point_name):
     multipliers = {

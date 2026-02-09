@@ -5,7 +5,6 @@ cap = cv2.VideoCapture("../assets/video1.mp4")
 fps = cap.get(cv2.CAP_PROP_FPS)
 delay = int(1000 / fps) if fps > 0 else 33
 
-# State variable for the trigger (must be outside the while loop)
 is_meme_active = False
 
 with FaceLandmarker.create_from_options(options) as landmarker:
