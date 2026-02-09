@@ -39,7 +39,7 @@ def get_outfit(assets, theme_name="thug"):
         ],
         "pirate": [
             (assets.pirate_hat, SimpleNamespace(index=9, ratio=2.5, point="bottom_middle")),
-            (assets.eye_patch, SimpleNamespace(index=359, ratio=0.6, point="middle"))
+            (assets.eye_patch, SimpleNamespace(index=473, ratio=0.6, point="middle"))
         ]
     }
     return themes.get(theme_name.lower(), themes["thug"])

@@ -21,7 +21,7 @@ with FaceLandmarker.create_from_options(options) as landmarker:
         face = result.face_landmarks[0]
 
         # This loop applies all items in the 'outfit' list automatically
-        for asset, config in get_outfit(load_assets() ,theme_name="thug"):
+        for asset, config in get_outfit(load_assets() ,theme_name="pirate"):
             frame = overlay(frame, asset, face, config)
     else:
         print("No face detected.")
